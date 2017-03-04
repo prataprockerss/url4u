@@ -1,2 +1,6 @@
-markdown: redcarpet
+markdown: kramdown
 baseurl: /url4u
+title: Unique Resource Library
+port: 8080
+sass:
+  sass_dir: styles
