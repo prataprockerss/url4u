@@ -1,0 +1,250 @@
+.prod-list
+  .prod-cnt
+    +clrfix
+    +mq(min,1024px)
+      padding: 15px
+  .product
+    position: relative
+    margin-bottom: 20px
+    +mq(max,1023px)
+      overflow: hidden
+    +mq(max,767px)
+      padding: 10px 2%
+      border-bottom: 1px solid #ebf0f4
+      margin: 0 -2%
+      &:nth-child(2n-1)
+        background-color: #fbfbfb
+    +mq(min,768px)
+      border: 1px solid #ebf0f4
+      padding: 0
+      background: bg('divider.png') no-repeat right center
+    .prod-cnt
+      +mq(min,768px)
+        padding: 15px
+    .prod-img
+      float: left
+      padding-right: 2%
+      +mq(max,767px)
+        width: 20%
+      +mq(768px,1023px)
+        width: 13%
+      +mq(min,1024px)
+        width: 10%
+        text-align: center
+      img
+        +mq(min,1024px)
+          max-height: 150px
+    .prod-info
+      color: #000
+      float: left
+      width: 80%
+      padding-left: 2%
+      +mq(max,767px)
+        padding-right: 100px
+      +mq(min,1024px)
+        width: 60%
+        padding: 0 20px
+      .name
+        font: 700 14px $pf
+        +mq(min,768px)
+          font-size: 18px
+        +mq(min,1024px)
+          font-size: 24px
+        letter-spacing: 1px
+        padding-bottom: 5px
+      li
+        font: 11px / 16px $pf
+        +mq(min,768px)
+          padding: 5px 0
+          font-size: 16px
+        +mq(min,1024px)
+          font-size: 17px
+      .rating
+        display: none
+        position: absolute
+        right: 0
+        top: 20px
+        color: #fff
+        font: 700 rem(16) $pf
+        padding: 5px 30px 5px 12px
+        background: bg('is.png') no-repeat scroll right -161px / 30px auto #6885c3
+        border-radius: 6px 0  0 6px
+        // padding-right: 30px
+    .prod-addons
+      &.active
+        +mq(max,1023px)
+        +transform(translateX(0))
+      +mq(max,1023px)
+        +position(absolute, 0 x x 0)
+        +transform(translateX(100%))
+        background-color: #fff
+        +size(100%)
+        text-align: center
+        z-index: 5
+        overflow: auto
+        +transition
+      >header
+        +mq(max,1023px)
+          background-color: #fff
+          // box-shadow: 0 0 20px lighten($pc,25)
+          position: relative
+          z-index: 4
+          +clrfix
+          text-align: center
+        h2
+          font: rem(14) $pf
+          letter-spacing: 2px
+          text-transform: uppercase
+          color: #000
+          +mq(max,1024px)
+            padding: 0 0 10px
+            text-transform: uppercase
+            font-size: 16px
+            text-align: center
+            font-weight: 800
+            color: #728dc7
+        .back
+          +mq(min,1024px)
+            display: none
+          +mq(max,1024px)
+            float: left
+            width: 40px
+            height: 100%
+            .is
+              display: block
+              +size(100%)
+              padding: 6px 8px 0
+              svg
+                fill: $pc
+      >footer
+        padding: 5px 0
+        text-align: center
+        width: 100%
+        background-color: #fff
+        color: bgc(#000,.5)
+        +mq(max,1023px)
+          font: 12px $pf
+          +position(absolute, x x 0 0)
+        +mq(min,1024px)
+          font-size: 14px
+      +mq(min,1024px)
+        float: left
+        width: 30%
+      .statistics
+        +mq(max,1023px)
+          position: absolute
+          padding: 37px 20px  25px 20px
+          overflow: auto
+          +size(100%)
+          +position(absolute, 0 x x 0)
+        li
+          margin-bottom: 5px
+          header
+            position: relative
+            text-align: center
+            font: 300 12px $pf
+            text-transform: uppercase
+            padding: 5px 0
+            letter-spacing: 1px
+          .value
+            padding: 5px 0
+            position: absolute
+            top: 0
+            font-weight: 800
+            &.max
+              right: 0
+
+          .bar
+            +clrfix
+            border-radius: 10px
+            overflow: hidden
+            .bad,.good
+              height: 5px
+              float: left
+            .bad
+              background-color: #f00
+            .good
+              background-color: green
+  .cta
+    +clrfix
+    +mq(max,767px)
+      padding: 10px 0 0
+    +mq(min,768px)
+      padding: 10px 20px
+      background-color: #f9fbfc
+      border-top : 1px solid #ebf0f4
+    .prices
+      +mq(max,767px)
+        +position(absolute, 20px 2% x x)
+        width: 120px
+        text-align: right
+      +mq(min,768px)
+        float: left
+        width: 50%
+      a
+        &:first-child
+          color: #da5ab4
+    a,label
+      font: 400 rem(16) $pf
+      display: block
+      +mq(min,768px)
+        float: left
+      color: #000
+      letter-spacing: 1px
+      +mq(min,768px)
+        margin-right: 2%
+      &.amazon
+        background-position: 0 -16px
+      &.flipkart
+        background-position: 0 -67px
+      &.snapdeal
+        background-position: 0 -119px
+      +mq(max,767px)
+        display: block
+        float: right
+        font-size: 14px
+    .other-links
+      +mq(min,768px)
+        float: right
+        width: 50%
+      li
+        display: inline-block
+        vertical-align: middle
+        margin-right: 2%
+        +mq(min,1025px)
+          float: right
+          
+        &:last-child
+          +mq(min,1025px)
+            display: none
+        +mq(min,768px)
+          display: block
+          // float: left
+          margin-right: 4%
+        input[type="checkbox"]
+          position: absolute
+          left: 0
+          top: 0
+          visibility: hidden
+          opacity: 0
+          &:checked
+            \+label
+              &.compare
+                color: darken(#728dc7,20)
+        a,label
+          color: #728dc7
+          font: 400 rem(16) $pf
+          display: block
+          float: left
+          color: #728dc7
+          cursor: pointer
+          letter-spacing: 1px
+          text-transform: uppercase
+          +mq(max,767px)
+            font-size: 12px
+        a
+          &.reviews
+            background-position: 0 -217px
+        label
+          &.compare
+            background-position: 0 -319px

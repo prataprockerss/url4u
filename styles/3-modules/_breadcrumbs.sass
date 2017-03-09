@@ -1,0 +1,31 @@
+.breadcrumbs
+  padding: 10px 0
+  font: 300 14px $pf
+  letter-spacing: 1px
+  color: bgc(#000,.9)
+  +mq(min,768px)
+    padding-top: 0
+  ul
+    li
+      display: inline-block
+      padding-right: 20px
+      margin-right: 10px
+      position: relative
+      &:after
+        content: ''
+        +position(absolute, 50% 0  x x )
+        +transform(translateY(-50%) rotate(45deg))
+        +size(7px)
+        border-top: 1px solid bgc(#000,.5)
+        border-right: 1px solid bgc(#000,.5)
+      &:last-child
+        border: none
+        margin: 0
+        padding: 0
+        &:after
+          display: none
+    a
+      display: block
+      font: 300 14px $pf
+      letter-spacing: 1px
+      color: bgc(#000,.5)

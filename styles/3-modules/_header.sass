@@ -1,0 +1,26 @@
+.header
+  +clrfix
+  +prefix('box-shadow', 0 0 10px bgc(#444,.2))
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  .logo
+    float: left
+    padding: 10px 0
+    a
+      font: 40px $sf
+      letter-spacing: 4px
+  nav
+    float: right
+    padding: 22px 0
+    li
+      float: left
+      padding: 0 10px
+      &:last-child
+        margin-right: 0
+      a
+        display: block
+        font: 300 14px $pf
+        text-transform: uppercase
+        letter-spacing: 1px

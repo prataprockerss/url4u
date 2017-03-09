@@ -1,0 +1,18 @@
+.banner
+  min-height: 100vh
+  position: relative
+  .container
+    position: absolute
+    left: 50%
+    top: 50%
+    text-align: center
+    +transform(translate(-50%,-50%))
+  p
+    font: 200  96px $pf
+    span
+      font-weight: 600
+      color: #7d78b7
+  .cta
+    padding: 40px 0 0
+    #{$box-btn}
+      font: 300 22px $pf

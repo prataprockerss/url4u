@@ -1,0 +1,23 @@
+
+\:root
+  font-size: $rootSize + px
+/*Global Css starts*/
+a
+  color: bgc($link-color,.5)
+  text-decoration: none
+  outline: none
+  +transition(all 0.5s ease)
+
+body
+  line-height: 1
+  font: rem($body-size) $pf
+  color: $body-color
+  position: relative
+  background: $body-bg
+
+*
+  +sizing(border-box)
+  +break-word(keep-all)
+  &:after,
+  &:before
+    @extend *

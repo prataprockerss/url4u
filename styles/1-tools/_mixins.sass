@@ -1,0 +1,266 @@
+@import "_variable.sass"
+@function bg($imageName)
+  @return url($image-path + $imageName)
+
+@function bgc($color,$opacity:1)
+  @return rgba($color,$opacity)
+
+=prefix($property,$value)
+  -webkit-#{$property}: $value
+  -o-#{$property}: $value
+  -moz-#{$property}: $value
+  -ms-#{$property}: $value
+  #{$property}: $value
+
+=input($inputs)
+  %content
+    @content
+  @each $input in $inputs
+    input[type="#{$input}"]
+      @extend %content
+
+=elem($elements)
+  %content
+    @content
+  @each $element in $elements
+    input[type="#{$element}"]
+      @extend %content
+
+
+=placeholders
+  &::-webkit-input-placeholder
+    @content
+
+  &:-moz-placeholder
+    @content
+
+  &::-moz-placeholder
+    @content
+
+  &:-ms-input-placeholder
+    @content
+
+  &:placeholder
+    @content
+
+
+// is stand for 'icon sprite'
+=is($init : true,$spriteDtls...)
+  @if $init
+    .is
+      display: inline-block
+      vertical-align: middle
+
+    @each $iconName,$x,$y,$spriteWidth,$spriteHeight in $spriteDtls
+      .is-#{$iconName}
+        background: bg('sprite.png') no-repeat $x + px $y + px transparent
+        width: $spriteWidth + px
+        height: $spriteHeight + px
+
+
+
+  @else if $init == false
+    @each $iconName,$x,$y in $spriteDtls
+      .is-#{$iconName}
+        background-position:  $x + px $y + px
+
+
+
+
+
+=sprite($img:'sprite.png',$x:0,$y:0,$sx:'auto',$sy:'auto')
+  background: bg($img) no-repeat ($x+px) ($y+px) / $sx $sy
+
+
+@function em($size,$basesize:$rootSize)
+  @return ($size/$basesize)+ em
+
+
+@function rem($size)
+  @return $size / $rootSize + rem
+
+
+=transition($prop : all .5s ease)
+  +prefix( 'transition',$prop)
+
+=vam($left:50%,$top:50%)
+  position: absolute
+  left: $left
+  top: $top
+  +transform(translate(-($left),-($top)))
+
+=transform($prop...)
+  +prefix( 'transform',$prop)
+
+=sizing($prop)
+  +prefix( 'box-sizing',$prop)
+
+=break-word($prop)
+  +prefix( 'word-break',$prop)
+
+=clrfix
+  &:after
+    clear: both
+    content: ''
+    display: block
+
+
+
+=clear($count , $increment)
+  %clear,
+  .clear
+    clear: both
+
+  @for $i from 1 through $count
+    .clear#{$increment * $i}
+      @extend %clear
+      height: $increment * $i+px
+
+
+
+
+
+=headings($count)
+  @for $i from 2 through 6
+    $heading-size: $heading-size - $count
+    h#{$i}
+      font-size: rem($heading-size)
+      @extend %h1
+
+
+
+=socialMedia($ext, $prop...)
+  @each $list in $prop
+    .#{$list}
+      background: bg($list + ($ext))
+
+
+
+=wh($prop)
+  width: $prop
+  height: $prop
+
+
+
+
+=customChooseField($size : 20px)
+  %cmn
+    position: relative
+    +input(checkbox,radio)
+      position: absolute
+      opacity: 0
+      visibility: hidden
+
+    label
+      display: block
+      font: $size - 2 $pf
+      margin: 10px 0
+      padding-left: $size + 10
+      cursor: pointer
+      &:before,&:after
+        position: absolute
+        content: ''
+        left: 0
+        width: $size
+        height: $size
+        z-index: 1
+        +transition
+      &::before
+        border: 1px solid $pc
+      &:after
+        width: $size / 2
+        height: $size / 2
+        z-index: 2
+        top: $size / 4
+        left: $size/4
+
+  .input-type-checkbox,.input-type-radio
+    @extend %cmn
+  .input-type-radio
+    +input(radio)
+      &:checked
+        \+label
+          &:after
+            +transform(scale(1))
+    label
+      &:before,&:after
+        border-radius: 50%
+      &:after
+        +transform(scale(0))
+        background: $pc
+        width: $size / 2
+        height: $size / 2
+        border: 1px solid $pc
+  .input-type-checkbox
+    +input(checkbox)
+      &:checked
+        \+label
+          &:after
+            opacity: 1
+    label
+      &:after
+        border-right: 1px solid $pc
+        border-bottom: 1px solid $pc
+        width: $size/3
+        left: $size / 4 + 2
+        +transform(rotate(30deg))
+        opacity: 0
+
+
+
+
+=cg($col,$spc)
+  width: (100% - ($spc * ($col - 1))) / $col
+  margin-right: $spc
+  margin-bottom: $spc
+  float: left
+  &:nth-child(#{$col}n+#{$col})
+    margin-right: 0
+
+
+=mq($arg...)
+  @if type_of(nth($arg,1)) == string
+    @media (#{nth($arg,1)}-width: nth($arg,2))
+      @content
+  @else
+    @media (min-width: nth($arg,1)) and (max-width: nth($arg,2))
+      @content
+
+
+=grid($ext,$totalClums:12)
+  .grid-layout
+    margin: 0 -1%
+  .grid-#{$ext}
+    float: left
+    padding: 0 1%
+
+  @for $i from 1 through $totalClums
+    $k: (100% / $totalClums)
+    .grid-#{$ext}-#{$i}
+      width: $k * $i
+      @extend .grid-#{$ext}
+
+
+
+=listItem($types...)
+  ol.list,
+  ul.list
+    margin-left: 27px
+    padding-bottom: 14px
+    font: rem(20) $sf
+    li
+      padding: 5px 0 5px 7px
+
+    &.bullet
+      margin-left: 10px
+      li
+        background: bg('bullet.png') no-repeat scroll left center rgba(0, 0, 0, 0)
+        padding: 5px 0 5px 18px
+
+  @each $listType in $types
+    ol.#{$listType},
+    ul.#{$listType}
+      li
+        list-style-type: $listType
+
+  /*Session error message end*/

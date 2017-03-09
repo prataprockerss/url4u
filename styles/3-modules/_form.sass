@@ -1,0 +1,115 @@
+/*form tag*/
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="text"],
+select,
+textarea
+  width: 100%
+  padding: 14px 20px
+  border: 1px solid bgc(#000,.2)
+  margin: 0
+  outline: none
+  +transition
+  font: 300 rem(14) $pf
+  letter-spacing: 1px
+  border-radius: 50px
+  &:active,&:focus
+    outline: none
+select
+  background: none
+  padding: 9px 10px
+  cursor: pointer
+textarea
+  resize: none
+  height: 80px
+input[type="checkbox"],
+input[type="radio"]
+  display: inline-block
+  vertical-align: middle
+  margin: 0 5px 0 0
+/*Form Tag end*/
+span,label
+  &.has-error
+    background: none repeat scroll 0 0 #f00
+    color: #fff
+    display: inline-block
+    font-size: 14px
+    margin-top: 10px
+    padding: 4px 10px
+    position: relative
+/*Common Buttons*/
+$pad: 12px
+a,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit],
+  background-color: transparent
+  font: 400 16px $pf
+  border: none
+  padding: 0
+  cursor: pointer
+  &.box-btn,
+    display: inline-block
+    margin-right: 10px
+    +mq(max,767px)
+      margin-right: 0
+    background-color: $pc
+    border: none
+    cursor: pointer
+    padding: $pad 25px
+    color: #fff
+    letter-spacing: 2px
+    text-transform: uppercase
+    vertical-align: middle
+    text-decoration: none
+    text-align: center
+    font: 800 11px $pf
+    // border: 1px solid $pc
+    border-radius: 3px
+    +transition
+    &.active,&:hover
+      background-color: darken($pc, 20)
+  &.full-btn
+    display: block
+    width: 100%
+    margin: 0
+  &.rounded
+    border-radius: 50px
+  &.secondary-btn
+    background-color: #fff
+    color: #39c0d4
+    &.active,&:hover
+      background-color: lighten(#fff, 10)
+  &:active,&:focus
+    outline: none
+/*hack for mozzila */
+@-moz-document url-prefix()
+  a.box-btn
+    padding-top: $pad + 1px
+    padding-bottom: $pad + 1px
+/*hack for mozzila end*/
+// Common buttons end
+
+// Custom input types
+.input-type-select
+  overflow: hidden
+  position: relative
+  &:after
+    background: bg('custom-select.png') no-repeat scroll center center
+    content: ""
+    display: block
+    height: 40px
+    position: absolute
+    right: 0
+    top: 0
+    width: 41px
+    z-index: 99999
+
+.form-layout
+  .form-row
+  .form-field
+    margin-bottom: 20px
+    position: relative

@@ -1,0 +1,60 @@
+
+/*overlay */
+.overlay-bg
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5)
+  height: 100%
+  left: 0
+  margin: 0 auto
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 100000
+
+.overlay
+  height: 100%
+  left: 0
+  margin: 0 auto
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 100001
+  visibility: hidden
+  .overlay-box
+    display: table
+    height: inherit
+    margin: 0 auto
+    width: 600px
+    .content
+      display: table-cell
+      vertical-align: middle
+
+    .closeBtn
+      background: none repeat scroll 0 0 #FFFFFF
+      border-radius: 5px
+      color: #2A78CB
+      cursor: pointer
+      font: bold 17px/25px Arial, Helvetica, sans-serif
+      height: 25px
+      padding: 0
+      position: absolute
+      right: 10px
+      text-align: center
+      top: 10px
+      width: 25px
+      z-index: 1002
+
+    .overlay-header
+      background: none repeat scroll 0 0 #4066ae
+      color: #fff
+      font: 600 19px "Open Sans", serif
+      padding: 9px 10px
+      position: relative
+
+    .overlay-content
+      padding: 20px 10px
+      background: none repeat scroll 0 0 #fff
+
+    .overlay-footer
+      padding: 9px 10px
+      background: #e3e3e3
+      text-align: right

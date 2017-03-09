@@ -1,0 +1,53 @@
+.documents
+  section
+    padding-bottom: rem(20)
+    header
+      text-transform: uppercase
+      font: rem(25) $pf
+      letter-spacing: 2px
+      color: $pc
+      padding: rem(10) 0
+    article
+      font: rem(18) $sf
+    &.colors
+      article
+        ul
+          +clrfix
+        li
+          float: left
+          width: 20%
+          text-align: center
+          .color
+            display: inline-block
+            width: 70px
+            height: 70px
+            &.pc
+              background-color: $pc
+            &.sc
+              background-color: $sc
+            &.cv1
+              background-color: $cv1
+            &.cv2
+              background-color: $cv2
+          span
+            display: block
+            text-align: center
+            padding: 5px 0
+            font: rem(18) $sf
+    .code-container
+      position: relative
+      .copy-to-clipboard
+        opacity: 0
+        +transition
+        cursor: pointer
+        +wh(30px)
+        border-radius: 2px
+        background: bg('copy-to-clipboard.png') no-repeat center center / 70% auto #fff
+        position: absolute
+        right: 4px
+        top: 4px
+        z-index: 10
+        border: none
+      &:hover
+        .copy-to-clipboard
+          opacity: 1

@@ -1,0 +1,32 @@
+.wrapper
+  min-height: 100vh
+  padding-bottom: 50px
+.footer
+  +clrfix
+  +prefix('box-shadow', 0 0 10px bgc(#444,.2))
+  position: absolute
+  left: 0
+  bottom: 0
+  width: 100%
+
+  nav
+    float: left
+    padding: 14px 0
+    li
+      float: left
+      padding: 0 10px
+      &:first-child
+        padding-left: 0
+      a
+        font: 12px $pf
+        letter-spacing: 1px
+        text-transform: uppercase
+  .social-media
+    float: right
+    padding: 10px 0
+    li
+      float: left
+      margin-left: 10px
+      a
+        display: block
+        +size(30px)
