@@ -1,0 +1,13 @@
+---
+layout: blog
+meta_discription : url4u Blog ! hers you get all types of updated and usefull frontend component for your project
+meta_keywords: blog,post,ui components, css tricks, sass tricks, tricks, usefull component, tutorial, html
+---
+<h1>
+  Blog
+</h1>
+
+{% for blog in site.posts %}
+  <h2>{{blog.title}}</h2>
+  <p>{{blog.meta_discription}}</p>
+{% endfor %}
