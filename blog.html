@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: 
+title:
 meta_discription : url4u Blog ! hers you get all types of updated and usefull frontend component for your project
 meta_keywords: blog,post,ui components, css tricks, sass tricks, tricks, usefull component, tutorial, html
 ---
@@ -8,7 +8,7 @@ meta_keywords: blog,post,ui components, css tricks, sass tricks, tricks, usefull
 <ul>
 {% for blog in site.posts %}
   <li>
-    <a href="{{blog.url}}">
+    <a href="{{site.baseurl}}/{{blog.url}}">
       <span class="heading">
         {{blog.title}}
       </span>
