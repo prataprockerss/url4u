@@ -1,0 +1,47 @@
+
+/*Content area css start*/
+.content-area {
+
+}
+.code-gen{
+  h2,h1{
+    padding-bottom: 10px;
+  }
+}
+.content-area .container { padding: 20px 0; background: #fff; }
+.templateHeading { border-bottom: 2px solid #000; font: 35px 'Lobster', cursive; padding: 0 0 7px; margin: 0 0 15px; }
+.content-area h1 { }
+.content-area h2 { }
+.content-area p { }
+.website-map { }
+.website-map dd li { font: 16px "open sans", sans-serif; }
+.website-map dd li a { display: block; float: right; font-size: 14px; margin: 0 5px; }
+/*Content area css End*/
+
+
+/*content area  default end*/
+.content-area .form-layout .component { display: none; }
+.content-area .result-container { width: 100%; overflow: auto;margin-bottom:20px;}
+.content-area .result-container textarea { height: 400px; }
+.toggle-btn { display: none }
+.generate-other-component{display: none; transition: all 300ms ease; -moz-transition: all 300ms ease; -webkit-transition: all 300ms ease; }
+.content-area .result-container[data-id="overlayCode"] + .generate-other-component{display: block;}
+.content-area .result-container[data-id="accordion"] + .generate-other-component{display: block;}
+.content-area .result-container[data-id="jsTabs"] + .generate-other-component{display: block;}
+.content-area .result-container[data-id="star-rating"] + .generate-other-component{display: block;}
+/*tab Layout Css*/
+
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 { float: left; padding: 0 1% }
+.grid-layout { margin: 0 -1% }
+.grid-12 { width: 100%; float: none; }
+.grid-11 { width: 91.66666666666666% }
+.grid-10 { width: 83.33333333333334% }
+.grid-9 { width: 75% }
+.grid-8 { width: 66.66666666666666% }
+.grid-7 { width: 58.333333333333336% }
+.grid-6 { width: 50% }
+.grid-5 { width: 41.66666666666667% }
+.grid-4 { width: 33.33333333333333% }
+.grid-3 { width: 25% }
+.grid-2 { width: 16.666666666666664% }
+.grid-1 { width: 8.333333333333332% }

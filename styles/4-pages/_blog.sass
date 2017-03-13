@@ -1,35 +1,54 @@
 .blog-cnt
-  padding-top: 80px
   +clrfix
   section
-    width: 80%
+    width: 70%
     float: left
+    h1
+      padding-bottom: 15px
+    ul
+      +clrfix
+      margin: 0 -1%
+    li
+      padding: 10px
+      border: 1px solid bgc(#ddd,.5)
+      background: bgc(#ddd,.3)
+      float: left
+      width: 48%
+      margin: 0 1% 2%
+      >a
+        display: block
+      h2,.heading
+        font-size: 20px
+        color: #444
+        letter-spacing: 1px
+        display: block
+        padding-bottom: 5px
+      span
+        font: 16px $sf
+        +ellipsis
+        a
+          font-size: 14px
+          color: $pc
 
   aside
-    width: 20%
+    width: 30%
     float: right
-  h1
-    padding-bottom: 15px
-  ul
-    +clrfix
-    margin: 0 -1%
-  li
-    padding: 10px
-    border: 1px solid bgc(#ddd,.2)
-    background: bgc(#ddd,.3)
-    float: left
-    width: 48%
-    margin: 0 1% 2%
-    >a
-      display: block
-    h2,.heading
-      font-size: 20px
-      color: #444
-      letter-spacing: 1px
-      display: block
-      padding-bottom: 5px
-    span
-      font: 16px $sf
-      a
-        font-size: 14px
-        color: $pc
+    padding-left: 40px
+    article
+      &.recent-post
+        border: 1px solid #d9d9d9
+      >header
+        font: 400 20px $fv1
+        padding: 10px 12px
+        background-color: #d9d9d9
+        color: #444
+      >main
+        padding: 15px
+        li
+          margin-bottom: 10px
+          .heading
+            font-size: 20px
+            color: #444
+            letter-spacing: 1px
+            display: block
+            padding-bottom: 5px

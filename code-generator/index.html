@@ -1,0 +1,238 @@
+---
+layout: inner
+page_class : code-gen
+---
+
+
+<div class="grid-layout">
+  <div class="grid-4">
+    <h1>Select Component</h1>
+    <form class="checkForm" action="#" method="post">
+      <div class="form-layout">
+        <div class="form-row">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <div class="input-type-select">
+                <select data-validate="select" name="component" class="select-component">
+                            <option value="">Select Option</option>
+                            <option value="navigation">Navigation</option>
+                            <option value="searchBox">Search Box</option>
+                            <option value="formLayout">Form Layout</option>
+                            <option value="selectOption">Options</option>
+                            <option value="ovelrayCode">Overlay</option>
+                            <option value="definationList">Defination List</option>
+                            <option value="selective">Selective List</option>
+                            <option value="dummyData">Dummy Text content</option>
+                            <option value="accordion">Accordion</option>
+                            <option value="jsTabs">JQuery Tabs</option>
+                            <option value="pagination">Pagination</option>
+                            <option value="slider">Slider</option>
+                            <option value="star-rating">Star rating</option>
+                            <option value="footer">Footer</option>
+                            <option value="social-media">Social Media</option>
+                          </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="slider">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <div class="input-group input-type-radio">
+                <ul>
+                  <li>
+                    <input type="radio" id="without-mob-img" name="slider-opt" required checked>
+                    <label for="without-mob-img">Without Mobile image</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="with-mob-img" name="slider-opt" required>
+                    <label for="with-mob-img">With Mobile imgage</label>
+                  </li>
+
+                </ul>
+              </div>
+              <label>No of Slides</label>
+              <input type="text" name="no-of-slides" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="footer">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <div class="input-group input-type-radio">
+                <ul>
+                  <li>
+                    <input type="radio" id="small-footer" name="footer-opt" required checked>
+                    <label for="small-footer">Small Footer</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="big-footer" name="footer-opt" required>
+                    <label for="big-footer">Big Footer</label>
+                  </li>
+
+
+                </ul>
+              </div>
+              <div class="only-big-footer">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="navigation">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <div class="input-group input-type-radio">
+                <ul>
+                  <li>
+                    <input type="radio" id="without-sub-menu" name="sub-menu" required checked>
+                    <label for="without-sub-menu">Without Submenu</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="with-sub-menu" name="sub-menu" required>
+                    <label for="with-sub-menu">With Submenu</label>
+                  </li>
+
+                </ul>
+              </div>
+              <label>No of links</label>
+              <input type="text" name="no-of-links" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="formLayout">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Row</label>
+              <input type="text" name="no-of-rows" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="accordion">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Number of Accordion</label>
+              <input type="text" name="no-of-accordion" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="definationList">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Number of Defination List</label>
+              <input type="text" name="no-of-defination-list" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="selectOption">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Number of options</label>
+              <input type="text" name="no-of-options" data-validate="number">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row component" id="dummyData">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>What you need?</label>
+              <div class="input-group input-type-radio">
+                <ul>
+                  <li>
+                    <input type="radio" id="dummyDiv" name="r2" required>
+                    <label for="dummyDiv">&lt;div&gt; Div</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="dummyPara" name="r2" required checked>
+                    <label for="dummyPara">&lt;p&gt; Para</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Number of Tag you want?</label>
+              <input type="text" name="no-of-options" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="jsTabs">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Number of Tabs</label>
+              <input type="text" name="no-of-js-tabs" data-validate="number" maxlength="1">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="selective">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>What you need?</label>
+              <div class="input-group input-type-radio">
+                <ul>
+                  <li>
+                    <input type="radio" id="radio" name="r" required checked>
+                    <label for="radio">Radio List</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="checkbox" name="r" required>
+                    <label for="checkbox">Checkboxes List</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Enter Number of list you need</label>
+              <input type="text" name="no-of-options" data-validate="number">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="ovelrayCode">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>Overlay ID</label>
+              <input type="text" name="overlay-id" data-validate="text" class="overlayid">
+            </div>
+          </div>
+        </div>
+        <div class="form-row component" id="pagination">
+          <div class="form-field mandatory">
+            <div class="input-group">
+              <label>No of pages</label>
+              <input type="text" name="no-of-page-link" data-validate="number">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <input type="button" value="Generate" class="validate-form generate box-btn">
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="grid-4">
+    <h2>Generated HTML</h2>
+    <div class="result-container">
+      <textarea></textarea>
+    </div>
+    <!-- <div class="generate-other-component">
+      <a href="javascript:void(0)" class="box-btn">Generate requried CSS & jQuery</a>
+    </div> -->
+  </div>
+  <div class="grid-4">
+    <h2>Generated Emmet Code</h2>
+    <div class="emmet-result-container">
+      <textarea></textarea>
+    </div>
+    <div class="clear20"> </div>
+    <p>Copy paste Emmet code in your development tool and press <strong>"TAB"</strong> </p>
+  </div>
+  <div class="clear"></div>
+</div>

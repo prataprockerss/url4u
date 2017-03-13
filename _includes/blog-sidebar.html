@@ -1,3 +1,22 @@
-<div class="advertisement">
-  
-</div>
+<article class="recent-post">
+  <header>
+    Recent Post
+  </header>
+  <main>
+    <ul>
+      {% for blog in site.posts  limit = 3 %}
+      <li>
+        <a href="{{site.baseurl}}{{blog.url}}">
+          <span class="heading">
+            {{blog.title}}
+          </span>
+          <span>{{blog.meta_discription}}... </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </main>
+</article>
+<artile class="advertisement">
+
+</artile>
