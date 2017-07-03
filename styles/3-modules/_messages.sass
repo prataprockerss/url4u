@@ -1,0 +1,102 @@
+.ajax-search
+  height: 200px
+  position: relative
+  &.section-feed
+    background-color: #fff
+    border-radius: 7px
+    margin-bottom: 10px
+  .message
+    +vam
+    p
+      font: 16px $pf
+      letter-spacing: 2px
+$clr: #2dc1d8
+.ajax-loader
+  width: 100px
+  height: 10px
+  // border: 1px solid #000
+  margin: auto
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    +size(10px)
+    background-color: $clr
+    box-shadow: 20px 0 0 lighten($clr,10), 40px 0 0 lighten($clr,20), 60px 0 0 lighten($clr,30), 80px 0 0 lighten($clr,40)
+    animation: loader .5s infinite
+
+@keyframes loader
+  20%
+    background-color: lighten($clr,40)
+    box-shadow: 20px 0 0 $clr, 40px 0 0 lighten($clr,10), 60px 0 0 lighten($clr,20), 80px 0 0 lighten($clr,30)
+  40%
+    background-color: lighten($clr,30)
+    box-shadow: 20px 0 0 lighten($clr,40), 40px 0 0 $clr, 60px 0 0 lighten($clr,10), 80px 0 0 lighten($clr,20)
+  60%
+    background-color: lighten($clr,20)
+    box-shadow: 20px 0 0 lighten($clr,30), 40px 0 0 lighten($clr,40), 60px 0 0 $clr, 80px 0 0 lighten($clr,10)
+  80%
+    background-color: lighten($clr,10)
+    box-shadow: 20px 0 0 lighten($clr,20), 40px 0 0 lighten($clr,30), 60px 0 0 lighten($clr,40), 80px 0 0 $clr
+
+.messages
+  margin: auto
+  max-width: 800px
+  position: fixed
+  left: 50%
+  top: -120%
+  width: 100%
+  z-index: 100
+  +transform(translateX(-50%))
+  +transition(all .5s $ease-out-circ)
+  &.show
+    top: 20px
+  .msg
+    padding: 10px 10px 10px 60px
+    border-right: 3px solid #000
+    +prefix('box-shadow', 0 0 20px bgc(#000,.5))
+    +clrfix
+    position: relative
+    margin-bottom: 20px
+    background-color: #fff
+    h5
+      font: 700 14px $sf
+      letter-spacing: 1px
+      padding-bottom: 0
+    p
+      padding: 0
+      font: 12px $pf
+      color: bgc(#444,.8)
+    .icon
+      position: absolute
+      left: 0
+      top: 0
+      height: 100%
+      width: 50px
+      svg
+        fill: #fff
+        stroke: #fff
+        width: 60%
+        +vam
+    .is-close
+      position: absolute
+      right: 10px
+      top: 50%
+      +transform(translateY(-50%))
+      +size(20px)
+      cursor: pointer
+      svg
+        +size(100%)
+    .close
+      float: right
+      width: 10%
+    $list: (info,#23B8B0) (error,#D82B2B) (confirm,#72B55F) (warning,#F58229)
+    @each $class , $clr in $list
+      &.#{$class}
+        h5
+          color: $clr
+        border-color: $clr
+        .icon
+          background-color: $clr

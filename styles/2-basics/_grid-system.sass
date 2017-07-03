@@ -1,0 +1,22 @@
+=grid($ext,$totalClums:12)
+  .grid-layout
+    margin: 0 -1%
+    +clrfix
+  .grid-#{$ext}
+    float: left
+    padding: 0 1%
+
+  @for $i from 1 through $totalClums
+    $k: (100% / $totalClums)
+    .grid-#{$ext}-#{$i}
+      width: $k * $i
+      @extend .grid-#{$ext}
+
++mq(max,767px)
+  +grid(xs)
++mq(768px,1024px)
+  +grid(md)
++mq(1025px,1366px)
+  +grid(lg)
++mq(min,1367px)
+  +grid(xl)

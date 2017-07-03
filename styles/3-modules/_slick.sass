@@ -16,7 +16,7 @@
   -webkit-tap-highlight-color: transparent
 
 
-.slick-list 
+.slick-list
   position: relative
   display: block
   overflow: hidden
@@ -73,8 +73,10 @@
 
 
 .slick-slide
-  img
-    display: block
+  &:focus
+    outline: none
+  // img
+  //   display: block
 
   &.slick-loading img
     display: none
@@ -105,10 +107,13 @@
 
 .slick-arrow
   position: absolute
-  top: 50%
+  +mq(max,767px)
+    top: 40%
+  +mq(min,768px)
+    top: 40%
   @include transform(translate(0,-50%))
-  width: 30px
-  height: 30px
+  width: 50px
+  height: 50px
   text-indent: -999px
   background-color: transparent
   border: none
@@ -116,24 +121,50 @@
   cursor: pointer
   &:before
     content: ''
-    @include vam
-    width: 9px
-    height: 16px
-    background: bg('sprite.png') no-repeat
+    +vam
+    +size(30px)
+    border: 5px solid #000
+    +transform(rotate(45deg) translate(-50%,-50%))
+    transform-origin: center center
+
+
 
   &.slick-prev
-    left: -25px
+    left: 0
     &:before
       background-position: -77px -144px
-
+      border-top-color: transparent
+      border-right-color: transparent
+      +transform(rotate(45deg) translate(-70%, -10%))
     &.slick-disabled
       display: none !important
 
 
   &.slick-next
-    right: -25px
+    right: 0
     &:before
+      +transform(rotate(45deg) translate(-70%, -10%))
+      border-bottom-color: transparent
+      border-left-color: transparent
       background-position: -88px -144px
 
     &.slick-disabled
       display: none !important
+.slick-dots
+  text-align: center
+  +mq(min,1025px)
+    padding-top: 15px
+  li
+    display: inline-block
+    padding: 0 5px
+    &.slick-active
+      button
+        background-color: #fff
+        border-color: transparent
+    button
+      display: block
+      overflow: hidden
+      +size(15px)
+      border: 1px solid #000
+      border-radius: 50%
+      text-indent: -99px

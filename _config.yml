@@ -1,6 +1,29 @@
-markdown: kramdown
-baseurl: /url4u
-title: Unique Resource Library
-port: 8080
+markdown: Redcarpet
+
+baseurl: http://url4u.in
+permalink: pretty
+
+port: 8080 # port for localhost
+title:
 sass:
   sass_dir: styles
+  sourcemap: :true
+  style: compact
+
+exclude: ['_site','static-pages','.sass-cache','design']
+
+
+metadescription: Unique Resource Library is for you to make your UI Development more easy and faster.
+metakeyword: html, html5, css, js, jquery, css framework, url4u, unique resource library for UI, Frontend, helping hand, jekyll, blog
+
+mainImg: images/site-seo.jpg
+encoding: utf-8
+
+
+
+# import external scripts and styles
+# if you have maked any property to true it will render on entire page.
+fontawesome: true  # http://fontawesome.io/
+slick: false  # http://kenwheeler.github.io/slick/
+lazyload: false # http://jquery.eisbehr.de/lazy/
+jssocials: false # http://js-socials.com/

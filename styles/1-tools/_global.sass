@@ -1,0 +1,69 @@
+
+\:root
+  font-size: $rootSize
+/*Global Css starts*/
+a
+  color: $link-color
+  text-decoration: none
+  outline: none
+  +transition(all 0.5s ease)
+
+body
+  line-height: 1
+  position: relative
+
+
+*
+  +sizing(border-box)
+  +break-word(keep-all)
+  &:after,
+  &:before
+    @extend *
+
+img
+  max-width: 100%
+  vertical-align: middle
+
+.container
+  margin: 0 auto
+  width: 96%
+  max-width: $cntMxWidth
+.fl
+  float: left
+.fr
+  float: right
+.text-right
+  text-align: right
+.text-left
+  text-align: left
+.text-center
+  text-align: center
+p
+  font: 300 rem(16) / rem(24) $sf
+  padding-bottom: 12px
+
+
+// including clear
++clear(3, 20)
+
+.desktop-only
+  display: block
+
+.mobile-only,
+.tab-mobile-only,
+.tab-only
+  display: none
+
+.loader
+  background: bg('loader.gif') no-repeat scroll center center bgc(#203651)
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 99999
+
+.loader.loaded
+  top: -100%
+
+/*Global Css End*/

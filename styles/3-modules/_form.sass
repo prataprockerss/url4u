@@ -10,11 +10,11 @@ textarea
   padding: 14px 20px
   border: 1px solid bgc(#000,.2)
   margin: 0
+  font: rem(12) $pf
   outline: none
   +transition
   font: 300 rem(14) $pf
   letter-spacing: 1px
-  // border-radius: 50px
   &:active,&:focus
     outline: none
 select
@@ -60,29 +60,47 @@ input[type=submit],
     border: none
     cursor: pointer
     padding: $pad 25px
+    background-color: $pc
     color: #fff
     letter-spacing: 2px
     text-transform: uppercase
     vertical-align: middle
     text-decoration: none
     text-align: center
-    font: 800 11px $pf
-    // border: 1px solid $pc
     border-radius: 3px
     +transition
     &.active,&:hover
-      background-color: darken($pc, 20)
+      background-color: darken($pc, 5%)
+    &:last-child
+      margin: 0
   &.full-btn
     display: block
     width: 100%
     margin: 0
+  &.md
+    $pad: 14px
+    font-size: 14px
+    padding: $pad 20px
+    @-moz-document url-prefix()
+      a.box-btn
+        padding-top: $pad + 1px
+        padding-bottom: $pad + 1px
+
+  &.sm
+    $pad: 10px
+    font-size: 12px
+    padding: $pad 15px
+    @-moz-document url-prefix()
+      a.box-btn
+        padding-top: $pad + 1px
+        padding-bottom: $pad + 1px
   &.rounded
     border-radius: 50px
   &.secondary-btn
-    background-color: #fff
-    color: #39c0d4
+    background-color: lighten($pc,25%)
+    color: darken($pc,25%)
     &.active,&:hover
-      background-color: lighten(#fff, 10)
+      background-color: lighten($pc, 10)
   &:active,&:focus
     outline: none
 /*hack for mozzila */
@@ -98,7 +116,7 @@ input[type=submit],
   overflow: hidden
   position: relative
   &:after
-    // background: bg('custom-select.png') no-repeat scroll center center
+    background: bg('custom-select.png') no-repeat scroll center center
     content: ""
     display: block
     height: 40px
@@ -106,10 +124,175 @@ input[type=submit],
     right: 0
     top: 0
     width: 41px
-    z-index: 99999
-
+    z-index: 20
+    pointer-events: none
 .form-layout
+  position: relative
   .form-row
+    &.col-2
+      +clrfix
+      margin: 0 -1%
+      .form-field
+        width: 48%
+        float: left
+        margin: 0 1%
   .form-field
-    margin-bottom: 20px
+    &.static
+      >label
+        position: static
+        pointer-events: all
+      input[type="text"],input[type="password"],input[type="email"],input[type="number"],select,textarea
+        padding: 10px 0
+
+    &.error
+      > label
+        color: #a90000
+      input[type="date"], input[type="email"], input[type="number"], input[type="password"], input[type="text"], select, textarea
+        border-color: #a90000
+        background-color: #fdeded
+        color: #a90000
     position: relative
+    %cmn
+      font: 14px $pf
+      letter-spacing: 1px
+      color: #5f8287
+    padding-bottom: 8px
+    +mq(min,768px)
+      padding-bottom: 15px
+    +mqh(max,800px)
+      padding-bottom: 10px
+    input[type="text"],input[type="password"],input[type="email"],input[type="number"],select,textarea
+      border-bottom: 1px solid #c9ccab
+      padding: rem(10) 2% rem(10)
+      // border-radius: 3px
+      background-color: #fff
+      @extend %cmn
+      color: darken(#a2a1a1,20%)
+    .error,.invalid_error
+      font-size: 11px
+      color: #f00
+      padding: 5px 0
+    >label
+      width: 98%
+      pointer-events: none
+      position: absolute
+      +prefix('transform-origin',left top)
+      @extend %cmn
+      left: 2%
+      top: 15px
+      +transition
+      font: rem(15) $pf
+      z-index: 2
+    &.focused
+      >label
+        top: 5px
+        +transform(scale(0.8))
+    &.password-help
+      a
+        +mq(min,768px)
+          padding: 10px 25px
+          display: inline-block
+      +mq(max,767px)
+        position: absolute
+        right: 15px
+        bottom: 69px
+        text-align: right
+    .or
+      text-align: center
+      font: 300 rem(20) $pf
+      color: #252525
+    .box-btn
+      &.login-with-fb
+        background-color: #3c5a99
+        .is
+          width: 20px
+        svg
+          +size(100%)
+          fill: #fff
+          stroke: #fff
+    .note
+      text-align: center
+      font: 400 rem(16) $pf
+      color: #a4a3a3
+      letter-spacing: 1px
+    .input-type-radio
+      padding: 10px 0
+      li
+        float: left
+        margin-right: 10px
+      &.gender
+        header
+          font: rem(14) $pf
+          color: #a2a1a1
+          display: inline-block
+          vertical-align: middle
+          width: 30%
+        input[type="radio"]
+          position: absolute
+          left: 0
+          top: 0
+          visibility: hidden
+            // padding:
+          &:checked
+            \+label
+              span
+                color: $pc
+              .is
+                svg
+                  fill: $pc
+                  .arrow
+                    opacity: 1
+
+        label
+          display: block
+          vertical-align: middle
+          +clrfix
+          cursor: pointer
+          position: relative
+          pointer-events: all
+          text-align: center
+          vertical-align: middle
+          border: none
+          .is
+            +size(25px 30px)
+            display: inline-block
+            svg
+              width: 100%
+              height: 100%
+              fill: #a2a1a1
+              path.arrow
+                opacity: 0
+          span
+            display: inline-block
+            vertical-align: middle
+            font: rem(18) $pf
+            letter-spacing: 1px
+            color: #a2a1a1
+            padding-top: 2px
+            &.male
+              text-align: left
+            &.female
+              text-align: right
+
+.input-type-checkbox , .input-type-radio
+  &.custom
+    padding-bottom: 10px
+    input[type="checkbox"],input[type="radio"]
+      position: absolute
+      visibility: hidden
+      opacity: 0
+      &:checked
+        \+label
+          background-color: #3d7fc2
+          color: #fff
+          border: 1px solid #3d7fc2
+    ul
+      +clrfix
+    li
+      display: inline-block
+      margin-right: 5px
+      label
+        color: #b7b8b8
+        padding: 7px 20px
+        font: 12px $sf
+        border-color: #b7b8b8

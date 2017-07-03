@@ -1,30 +1,26 @@
-<meta charset="utf-8">
- <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<meta name='keywords' content= '{{ page.meta_keywords }}' />
-<meta name='description' content= '{{ page.meta_discription }}' />
-<meta property='og:title' content='url4u - Unique Resource Library ' />
-<meta property='og:url' content='https://prataprockerss.github.io/url4u/' />
-<meta property='og:type' content='website' />
-<meta property='og:site_name' content='url4u' />
-<meta property='og:description' content='{{ page.meta_discription }}' />
-<title> {{site.title}} </title>
-<link rel="stylesheet" href="{{site.baseurl}}/styles/styles.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-7366245285638379",
-    enable_page_level_ads: true
-  });
-</script>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  ga('create', 'UA-84377323-1', 'auto');
-  ga('send', 'pageview');
+  <meta name='keywords' content="{% if page.metakeyword %} {{ page.metakeyword }} {{site.metakeyword}} {% else %} {{site.metakeyword}} {% endif%}" />
+  <meta name='description' content='{% if page.metadescription %} {{ page.metadescription }} -- {{site.metadescription}} {% else %} {{site.metadescription}} {% endif%}' />
+  <meta property='og:title' content='{{site.title}}' />
+  <meta property='og:url' content='{{site.baseurl}}' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='{% if page.mainImg %} {{site.baseurl}}/{{page.mainImg}} {% else %} {{site.baseurl}}/{{site.mainImg}} {% endif%}' />
+  <meta property='og:site_name' content='{{site.title}}' />
+  <meta property='og:description' content='{% if page.metadescription %} {{ page.metadescription }} {% else %} {{site.metadescription}} {% endif%}' />
 
-</script>
+  <title>{{site.title}}</title>
+  <link rel="icon" href="{{site.baseurl}}/images/favicon.png" type="image/png" sizes="16x16">
+  {% if site.fontawesome == true  or  page.fontawesome == true %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% endif%}
+  <link rel="stylesheet" href="{{site.baseurl}}/styles/styles.css">
+  <script src="{{site.baseurl}}/scripts/jquery-min.js" charset="utf-8"></script>
+</head>

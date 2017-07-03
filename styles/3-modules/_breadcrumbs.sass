@@ -1,31 +1,18 @@
 .breadcrumbs
-  padding: 10px 0
-  font: 300 14px $pf
-  letter-spacing: 1px
-  color: bgc(#000,.9)
-  +mq(min,768px)
-    padding-top: 0
   ul
-    li
-      display: inline-block
-      padding-right: 20px
-      margin-right: 10px
-      position: relative
-      &:after
-        content: ''
-        +position(absolute, 50% 0  x x )
-        +transform(translateY(-50%) rotate(45deg))
-        +size(7px)
-        border-top: 1px solid bgc(#000,.5)
-        border-right: 1px solid bgc(#000,.5)
-      &:last-child
-        border: none
-        margin: 0
-        padding: 0
-        &:after
-          display: none
+    +clrfix
+  li
+    float: left
+    color: bgc($pc,.8)
+    font: 300 14px $pf
+    vertical-align: middle
+    +clrfix
     a
-      display: block
-      font: 300 14px $pf
+      font: 400 14px $pf
       letter-spacing: 1px
-      color: bgc(#000,.5)
+      color: $pc
+    .fa,a
+      float: left
+      display: block
+    .fa
+      margin: 2px 4px

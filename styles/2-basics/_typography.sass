@@ -1,16 +1,24 @@
-%h1,
+%heading
+  padding-bottom: 10px
+  font-family: $pf
+h1,h2,h3,h4,h5,h6
+  @extend  %heading
 h1
-  font-size: rem($heading-size)
-  font-family: $fv1
-+headings($heading-size-differnce)
-  
-h1
+  font-size: 30px
   letter-spacing: 1px
+  +mq(min,768px)
+    padding-bottom: 20px
+  span
+    font-weight: 800
 h2
-  font-family: $sf
+h3
+h4
+h5
+h6
+
 
 p
-  font: 300 rem(16) / rem(24) $sf
+  font: 300 14px $pf
   padding-bottom: 12px
 
 em
@@ -20,8 +28,7 @@ strong
   font-weight: bold
 
 hr
-  border: solid #ddd
-  border-width: 1px 0 0
+  border: 1px solid #ddd
   clear: both
   margin: 10px 0 30px
   height: 0

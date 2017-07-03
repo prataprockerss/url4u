@@ -1,4 +1,8 @@
 a
-  color: #444
+  color: $link-color
   text-decoration: none
-  outline: 0  
+  outline: 0
+
+  &:hover,
+  &:focus
+    color: lighten($link-color, 10%)
