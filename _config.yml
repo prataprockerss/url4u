@@ -1,6 +1,6 @@
 markdown: Redcarpet
 
-baseurl: http://url4u.in
+baseurl: https://prataprockerss.github.io/url4u
 permalink: pretty
 
 port: 8080 # port for localhost
