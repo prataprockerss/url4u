@@ -1,18 +1,26 @@
 ---
 layout: blog
-meta_discription : url4u Blog ! hers you get all types of updated and usefull frontend component for your project
-meta_keywords: blog,post,ui components, css tricks, sass tricks, tricks, usefull component, tutorial, html
----
+wrapperClass: blog-cnt
+pageClass: blog-page
+jssocials: true
 
-<ul>
-{% for blog in site.posts %}
-  <li>
-    <a href="{{site.baseurl}}{{blog.url}}">
-      <span class="heading">
-        {{blog.title}}
-      </span>
-      <span>{{blog.meta_discription}}</span>
-    </a>
-  </li>
-{% endfor %}
-</ul>
+---
+<div class="blog-listing">
+  <ul>
+    {% for post in site.posts  %}
+      <li>
+        <header>
+          <a href="{{site.baseurl}}{{post.url }}">
+            {{post.title}}
+          </a>
+        </header>
+        <main>
+          <img src="{{post.mainImg}}" alt="">
+        </main>
+        <footer>
+
+        </footer>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

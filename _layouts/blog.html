@@ -1,14 +1,18 @@
 ---
-  layout: inner
+layout: inner
+
 ---
-<div class="blog-cnt">
-  <section>
-    <h1>
-      {{page.title}}
-    </h1>
+
+<div class="grid-layout">
+  <div class="grid-xs-12 grid-md-8 grid-lg-8 grid-xl-10">
     {{content}}
-  </section>
-  <aside>
-    {% include blog-sidebar.html %}
-  </aside>
+  </div>
+  <div class="grid-xs-12 grid-md-4 grid-lg-4 grid-xl-2">
+    <article>
+      {% include modules/social-media.html heading='Follow us on'%}
+    </article>
+    <article>
+      {% include modules/share-tool.html class='share-small' heading='Share us on'%}
+    </article>
+  </div>
 </div>
