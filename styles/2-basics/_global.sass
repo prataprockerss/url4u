@@ -4,7 +4,10 @@ img
 .container
   margin: 0 auto
   width: 96%
-  max-width: $cntMxWidth
+  +mq(1200px,1599px)
+    max-width: 1200px
+  +mq(min,1600px)
+    max-width: 1600px
 .fl
   float: left
 .fr

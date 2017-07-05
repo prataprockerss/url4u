@@ -1,54 +1,29 @@
-.blog-cnt
-  +clrfix
-  section
-    width: 70%
-    float: left
-    h1
-      padding-bottom: 15px
-    ul
-      +clrfix
-      margin: 0 -1%
-    li
-      padding: 10px
-      border: 1px solid bgc(#ddd,.5)
-      background: bgc(#ddd,.3)
-      float: left
-      width: 48%
-      margin: 0 1% 2%
-      >a
-        display: block
-      h2,.heading
-        font-size: 20px
-        color: #444
-        letter-spacing: 1px
-        display: block
-        padding-bottom: 5px
-      span
-        font: 16px $sf
-        +ellipsis
-        a
-          font-size: 14px
-          color: $pc
+.blog-listing
+  .post
+    a
+      display: block
+      font-size: em(16)
+    main
+      position: relative
+      .category
+        position: absolute
+        right: em(10)
+        top: em(10)
+        background-color: $pc
+        padding: em(5) em(10)
+        color: #fff
+        border-radius: 3px
+        font-size: em(12)
+        text-transform: uppercase
+    header
+    footer
+      background-color: #f3f3f3
+      padding: em(10) em(15)
+      .author
+        font-size: em(12)
+        padding-top: em(5)
+        color: #000
 
-  aside
-    width: 30%
-    float: right
-    padding-left: 40px
-    article
-      &.recent-post
-        border: 1px solid #d9d9d9
-      >header
-        font: 400 20px $fv1
-        padding: 10px 12px
-        background-color: #d9d9d9
-        color: #444
-      >main
-        padding: 15px
-        li
-          margin-bottom: 10px
-          .heading
-            font-size: 20px
-            color: #444
-            letter-spacing: 1px
-            display: block
-            padding-bottom: 5px
+.blog-aside
+  >article
+    margin-bottom: em(15)

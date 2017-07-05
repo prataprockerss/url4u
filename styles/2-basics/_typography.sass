@@ -4,13 +4,14 @@
 h1,h2,h3,h4,h5,h6
   @extend  %heading
 h1
-  font-size: 30px
-  letter-spacing: 1px
+  font-size: em(30)
   +mq(min,768px)
     padding-bottom: 20px
   span
     font-weight: 800
-
+h2
+  font: 600 em(18) $pf
+  color: $pc
 
 p
   font: 300 14px $pf

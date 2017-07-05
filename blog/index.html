@@ -3,24 +3,27 @@ layout: blog
 wrapperClass: blog-cnt
 pageClass: blog-page
 jssocials: true
-
 ---
+<h1>Recent Article</h1>
 <div class="blog-listing">
-  <ul>
+  <div class="grid-layout">
     {% for post in site.posts  %}
-      <li>
-        <header>
-          <a href="{{site.baseurl}}{{post.url }}">
+      <div class="grid-xs-12 grid-md-6 grid-lg-4 grid-xl-3 post">
+        <a href="{{site.baseurl}}{{post.url }}" title="{{post.title}}">
+          <main>
+            <div class="category">
+              {{post.category}}
+            </div>
+            <img src="{{post.mainImg}}" alt="">
+          </main>
+          <footer>
             {{post.title}}
-          </a>
-        </header>
-        <main>
-          <img src="{{post.mainImg}}" alt="">
-        </main>
-        <footer>
-
-        </footer>
-      </li>
+            <div class="author">
+              Author: {{post.author}}
+            </div>
+          </footer>
+        </a>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
