@@ -3,9 +3,42 @@
   - name: Facebook
     link: '#'
     className: facebook-square
-  - name: Email
+  - name: Twitter
     link: '#'
-    className: envelope
+    className: twitter
   - name: Instagram
     link: '#'
     className: instagram
+  - name: Snapchat
+    link: '#'
+    className: snapchat-ghost
+  - name: Google Plus
+    link: '#'
+    className: google-plus
+  # - name: Email
+  #   link: '#'
+  #   className: envelope-o
+  # - name: Youtube
+  #   link: '#'
+  #   className: youtube-play
+  # - name: Tripadvisor
+  #   link: '#'
+  #   className: tripadvisor
+  # - name: WhatsApp
+  #   link: '#'
+  #   className: whatsapp
+  # - name: StackOverflow
+  #   link: '#'
+  #   className: stack-overflow
+  # - name: Github
+  #   link: '#'
+  #   className: github
+  # - name: Wikipedia
+  #   link: '#'
+  #   className: wikipedia-w
+  # - name: SoundCloud
+  #   link: '#'
+  #   className: soundcloud
+  # - name: bitbucket
+  #   link: '#'
+  #   className: bitbucket
