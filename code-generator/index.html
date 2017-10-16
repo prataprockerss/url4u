@@ -15,23 +15,23 @@ codeGen: true
             <div class="input-group">
               <div class="input-type-select">
                 <select data-validate="select" name="component" class="select-component">
-                            <option value="">Select Option</option>
-                            <option value="navigation">Navigation</option>
-                            <option value="searchBox">Search Box</option>
-                            <option value="formLayout">Form Layout</option>
-                            <option value="selectOption">Options</option>
-                            <option value="ovelrayCode">Overlay</option>
-                            <option value="definationList">Defination List</option>
-                            <option value="selective">Selective List</option>
-                            <option value="dummyData">Dummy Text content</option>
-                            <option value="accordion">Accordion</option>
-                            <option value="jsTabs">JQuery Tabs</option>
-                            <option value="pagination">Pagination</option>
-                            <option value="slider">Slider</option>
-                            <option value="star-rating">Star rating</option>
-                            <option value="footer">Footer</option>
-                            <option value="social-media">Social Media</option>
-                          </select>
+                  <option value="">Select Option</option>
+                  <option value="navigation">Navigation</option>
+                  <option value="searchBox">Search Box</option>
+                  <option value="formLayout">Form Layout</option>
+                  <option value="selectOption">Options</option>
+                  <option value="ovelrayCode">Overlay</option>
+                  <option value="definationList">Defination List</option>
+                  <option value="selective">Selective List</option>
+                  <option value="dummyData">Dummy Text content</option>
+                  <option value="accordion">Accordion</option>
+                  <option value="jsTabs">JQuery Tabs</option>
+                  <option value="pagination">Pagination</option>
+                  <option value="slider">Slider</option>
+                  <option value="star-rating">Star rating</option>
+                  <option value="footer">Footer</option>
+                  <option value="social-media">Social Media</option>
+                </select>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ codeGen: true
         <div class="form-row component" id="slider">
           <div class="form-field mandatory">
             <div class="input-group">
-              <div class="input-group input-type-radio">
+              <div class="input-type-radio">
                 <ul>
                   <li>
                     <input type="radio" id="without-mob-img" name="slider-opt" required checked>
@@ -211,29 +211,27 @@ codeGen: true
 
         <div class="form-row">
           <div class="form-field">
-            <input type="button" value="Generate" class="validate-form generate box-btn">
+            <input type="button" value="Generate" class="validate-form generate box-btn sm">
           </div>
         </div>
       </div>
     </form>
 
   </div>
-  <div class="grid-4">
+  <div class="grid-8">
     <h2>Generated HTML</h2>
+    <div class="text-right">
+      <button class="copy-to-clipboard box-btn sm copy-btn" data-clipboard-target=".generated-result"> Copy to Clipboard </button>
+    </div>
+    <div class="clear20"></div>
     <div class="result-container">
-      <textarea></textarea>
+      <div class="temp">
+      </div>
+<pre><code data-language="html" class="generated-result">
+  <h1>Copy code from here</h1>
+</code>
+      </pre>
     </div>
-    <!-- <div class="generate-other-component">
-      <a href="javascript:void(0)" class="box-btn">Generate requried CSS & jQuery</a>
-    </div> -->
-  </div>
-  <div class="grid-4">
-    <h2>Generated Emmet Code</h2>
-    <div class="emmet-result-container">
-      <textarea></textarea>
-    </div>
-    <div class="clear20"> </div>
-    <p>Copy paste <a href="https://emmet.io/download/" target="_blank">Emmet</a> code in your development tool and press <strong>"TAB"</strong> </p>
   </div>
   <div class="clear"></div>
 </div>

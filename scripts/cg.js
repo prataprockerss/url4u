@@ -102,7 +102,6 @@ $(window).load(function(){
           });
           break;
         case 'formLayout':
-          //          alert(selectValue)
           $('.component').each(function() {
             if ($(this).css('display') === 'block') {
               var componentID = $(this);
@@ -186,7 +185,7 @@ function genrateHTML(count, id) {
   switch (id) {
     /* +++++++++++ pagination Start +++++++++++++++ */
     case 'pagination':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<ul class="pagination"></ul>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><a href="#">' + i + '</a></li>');
@@ -197,14 +196,15 @@ function genrateHTML(count, id) {
       $('.result-container ul li').eq(count - 3).html('<span>...</span>');
 
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>EMMET is not available</textarea>');
+      Rainbow.color();
       break;
       /* +++++++++++ pagination End +++++++++++++++ */
 
       /* +++++++++++ social media Start +++++++++++++++ */
     case 'social-media':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="social-media"><ul></ul></div>').attr('data-id', id);
       var social_media_array = ['facebook', 'twitter', 'linkedin', 'google-plus', 'you-tube'];
       for (i = 1; i <= 5; i++) {
@@ -212,8 +212,9 @@ function genrateHTML(count, id) {
       }
 
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>' + '.social-media>ul>li.icon.icon-$*5' + '</textarea>');
+      Rainbow.color();
       break;
       /* +++++++++++ social media End +++++++++++++++ */
 
@@ -221,18 +222,19 @@ function genrateHTML(count, id) {
 
       /* +++++++++++ navigation Start +++++++++++++++ */
     case 'without-sub-menu':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="nav"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><a href="#">Link' + i + ' </a></li>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.nav>ul>li*' + count + '>a[href="#"]{Link$}</textarea>');
+      Rainbow.color();
       break;
 
     case 'with-sub-menu':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="nav"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><a href="#">Link' + i + '</a></li>');
@@ -242,41 +244,42 @@ function genrateHTML(count, id) {
         $('.submenu').append(('<li><a href="#">Link' + i + '</a></li>'));
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.nav>ul>li.has-sub-menu*' + count + '>a[href="#"]{Link$}+.sub-menu>ul>li>a[href="#"]{Link$}*3</textarea>');
-
+      Rainbow.color();
       break;
       /* +++++++++++ navigation End +++++++++++++++ */
 
       /* +++++++++++ slider Start +++++++++++++++ */
     case 'without-mob-img':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="banner"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><img src="images/' + i + '.jpg" ></li>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.banner>ul>li*' + count + '>img[src="images/$.jpg"]</textarea>');
+      Rainbow.color();
       break;
 
     case 'with-mob-img':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="banner"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><img src="images/' + i + '.jpg" ><img src="images/mobile-img/' + i + '.jpg" ></li>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.banner>ul>li*' + count + '>img[src="images/$.jpg"]+img[src="images/mobile-img/$.jpg"]</textarea>');
-
+Rainbow.color();
       break;
 
       /* +++++++++++ slider End +++++++++++++++ */
 
       /* +++++++++++ footer Start +++++++++++++++ */
     case 'big-footer':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="footer"><div class="container"><div class="footer-links"></div><p>copyright © 2014 ABC Entertainment Pvt Ltd.</p></div></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container .footer-links').append('<dl><dt>Column' + i + '</dt><dd></dd></dl>');
@@ -286,25 +289,25 @@ function genrateHTML(count, id) {
         $('.footer-links dl dd ul').append('<li><a href="#">link' + i + '</a></li>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.footer>.contaienr>.footer-links>dl*' + count + '>dt{Column $}+dd>ul>li*4>a[href="#"]</textarea>');
-
+Rainbow.color();
       break;
 
     case 'small-footer':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="footer"><div class="container"> copyright © 2014 ABC Entertainment Pvt Ltd.</div></div>').attr('data-id', id);
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.footer>.container{copyright © 2014 ABC Entertainment Pvt Ltd.}</textarea>');
-
+Rainbow.color();
       break;
 
       /* +++++++++++ footer End +++++++++++++++ */
 
       /* +++++++++++ Tabs Start +++++++++++++++ */
     case 'jsTabs':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="tabCnt"><div class="tabNav"><ul></ul></div><div class="tabResult"></div></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         if (i == 1) {
@@ -324,34 +327,37 @@ function genrateHTML(count, id) {
 
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
 
       $('.emmet-result-container').html('<textarea>..tabCnt>(.tabNav>ul>li*' + count + '>a[href="javascript:void(0)" , rel="tab$"]{Tab $})+(.tabResult>.tabBx.overview#tab$*' + count + '>.content{Content for Tab $})</textarea>');
+      Rainbow.color();
       break;
       /* +++++++++++ Tabs Start +++++++++++++++ */
 
       /* +++++++++++ Defination list Start +++++++++++++++ */
     case 'definationList':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="defination-parent"></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container .defination-parent').append('<dl><dt>Definition Title ' + i + '</dt><dd>Definition Description ' + i + '</dd></dl>');
 
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.defination-parent>dl*' + count + '>dt+dd</textarea>');
+      Rainbow.color();
       break;
     case 'accordion':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="accordion"></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container .accordion').append('<dl><dt>Accordion Tittle ' + i + '</dt><dd>Accordion content' + i + '</dd></dl>');
       }
       var htmlstring = $('.result-container').html();
       console.log(htmlstring)
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.accordion>dl*' + count + '>dt{Accordion Tittle $}+dd{Accordion Description $}</textarea>');
+      Rainbow.color();
       break;
 
       /* +++++++++++ Defination list end +++++++++++++++ */
@@ -362,12 +368,13 @@ function genrateHTML(count, id) {
       $('.result-container textarea,.emmet-result-container textarea').html();
       $('.result-container').html('<div class="search-container"><form class="checkform"><input type="text" placeholder="Search"><input type="button" value="Search"></form></div>').attr('data-id', id);
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.search-container>form.checkform>input[placeholder=Search,type=text]+input[value=Search,type=button]</textarea>');
+      Rainbow.color();
       break;
 
     case 'star-rating':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="rating"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= 5; i++) {
         $('.result-container .rating ul').append('<li><button></button></li>');
@@ -375,7 +382,7 @@ function genrateHTML(count, id) {
       var htmlstring = $('.result-container').html();
       $('.result-container').html('<textarea>' + htmlstring + '</textarea>');
       $('.emmet-result-container').html('<textarea>.rating>ul>li*5>button</textarea>');
-
+      Rainbow.color();
       break;
 
       /* +++++++++++ Search box End +++++++++++++++ */
@@ -383,15 +390,15 @@ function genrateHTML(count, id) {
 
       /* +++++++++++ Form layout Start +++++++++++++++ */
     case 'formLayout':
-      $('.result-container textarea').html();
-      $('.result-container').html('<form class="checkForm" action="#" method="post"><div class="form-layout"></div></form>').attr('data-id', id);
+      $('.result-container code').html();
+      $('.result-container .temp').html('<form class="check-form" action="#" method="post">\n\t<div class="form-layout">\t</div>\n</form>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
-        $('.result-container .form-layout').append('<div class="form-row"><div class="form-field mandatory"><label for="fname">Input Type ' + i + '</label><!--Insert your input tag here--><div class="clear"></div></div><div class="clear"></div></div>');
+        $('.result-container .form-layout').append('\n\t\t<div class="form-row">\n\t\t\t<div class="form-field mandatory">\n\t\t\t\t<label for="fname">Input Type ' + i + '</label>\n\t\t\t\t<input type="text" />\n\t\t\t</div>\n\t\t</div>\n\t');
       }
-      var htmlstring = $('.result-container').html();
+      var htmlstring = $('.result-container .temp').html();
 
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
-      $('.emmet-result-container ').html('<textarea>.checkForm>.form-layout>.form-row*' + count + '>.form-field.madatory>label[for=lablefor$]+input[type="text"]+.clear</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
+      Rainbow.color();
       break;
 
       /* +++++++++++ Form Layout end +++++++++++++++ */
@@ -399,48 +406,51 @@ function genrateHTML(count, id) {
 
       /* +++++++++++ Select option Start +++++++++++++++ */
     case 'selectOption':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<select></select>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container select').append('<option value="option' + i + '">Option' + i + '</option>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container  ').html('<textarea>select>option[value=option$]*' + count + '</textarea>');
+      Rainbow.color();
       break;
       /* +++++++++++ Select option End +++++++++++++++ */
 
       /* +++++++++++ Checkbox Start +++++++++++++++ */
     case 'checkbox':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="input-group input-type-checkbox"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><input type="checkbox" id="checkbox' + i + '" name="checkbox' + i + '"><label for="checkbox' + i + '">Label for checkbox ' + i + '</label></li>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.input-group.input-type-checkbox>ul>li*' + count + '>input#checkbox$[name="checkbox$"type="checkbox"]+label[for="checkbox$"]{Label for checkbox $}</textarea>');
+      Rainbow.color();
       break;
 
       /* +++++++++++ Checkbox End +++++++++++++++ */
 
       /* +++++++++++ Radio Start +++++++++++++++ */
     case 'radio':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="input-group input-type-radio"><ul></ul></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container ul').append('<li><input type="radio" id="radio' + i + '" name="radio"><label for="radio' + i + '">Label for radio ' + i + '</label></li>');
       }
       var htmlstring = $('.result-container').html();
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>.input-group.input-type-radio>ul>li*' + count + '>input#radio$[name="radio"type="radio"]+label[for="radio$"]{Label for radio $}</textarea>');
+      Rainbow.color();
       break;
 
       /* +++++++++++ Radio End +++++++++++++++ */
 
       /* +++++++++++ Dummy para Start +++++++++++++++ */
     case 'dummyPara':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="sample-data"></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container .sample-data').append('<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>');
@@ -449,16 +459,16 @@ function genrateHTML(count, id) {
       $('.sample-data').replaceWith(cnt);
       var htmlstring = $('.result-container').html();
       console.log(htmlstring)
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>EMMET is not available</textarea>');
-
+      Rainbow.color();
       break;
 
       /* +++++++++++ Dummy para End +++++++++++++++ */
 
       /* +++++++++++ Dummy Div Start +++++++++++++++ */
     case 'dummyDiv':
-      $('.result-container textarea').html();
+      $('.result-container code').html();
       $('.result-container').html('<div class="sample-data"></div>').attr('data-id', id);
       for (i = 1; i <= count; i++) {
         $('.result-container .sample-data').append('<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>');
@@ -467,21 +477,20 @@ function genrateHTML(count, id) {
       $('.sample-data').replaceWith(cnt);
       var htmlstring = $('.result-container').html();
       console.log(htmlstring)
-      $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+      $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
       $('.emmet-result-container').html('<textarea>EMMET is not available</textarea>');
-
+      Rainbow.color();
       break;
       /* +++++++++++ Dummy Div End +++++++++++++++ */
   }
 }
 
 function genrateoverlayHTML(id, animin, animout) {
-  $('.result-container textarea').html();
+  $('.result-container code').html();
   $('.result-container').html('<div class="overlay-box" id="' + id + '"></div>').attr('data-id', 'overlayCode');
   $('.result-container .overlay-box').append('<div class="overlay-header"> <p>Overlay Header</p> </div><div class="overlay-content"><p>Overlay Content</p></div><div class="overlay-footer"> <p>Overlay footer</p> </div>');
   var htmlstring = $('.result-container').html();
-  $('.result-container ').html('<textarea>' + htmlstring + '</textarea>');
+  $('.result-container').html('<pre><code data-language="html" class="generated-result">'+ htmlstring + '</code> </pre>');
 
   $('.emmet-result-container').html('<textarea>.overlay-box#' + id + '>(.overlay-header>p{Overlay Content})+(.overlay-content>p{Overlay Content})+(.overlay-footer>p{Overlay Content})</textarea>');
-
 }
